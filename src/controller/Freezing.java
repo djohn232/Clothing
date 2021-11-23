@@ -1,3 +1,5 @@
+package controller;
+
 //Temperature Ranges:  
 //90 - 100+ - HOT
 //70 - 89 - WARM
@@ -5,6 +7,6 @@
 //33 - 49 - COLD
 //32 - 0 (and less) - FREEZING
 
-public class Cold {
+public class Freezing {
 
 }

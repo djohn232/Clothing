@@ -1,9 +1,11 @@
+package model;
+
 /**************************************************************
- * Name        : Project Name   
+ * Name       : Clothing Based on Temperature   
 * Author      : Delanie Johnson
 * Created     : 11/01/2021
 * Course      : CIS 152 Data Structures
-* Version     : 1.0
+* Version     : 2.0
 * OS          : Windows 10
 * Copyright   : This is my own original work based on
 *               specifications issued by our instructor

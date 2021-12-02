@@ -1,5 +1,5 @@
 /**************************************************************
- * Name       : Clothing Based on Temperature   
+ * Name       : Clothing Based on Temperature    
 * Author      : Delanie Johnson
 * Created     : 11/01/2021
 * Course      : CIS 152 Data Structures
@@ -30,6 +30,7 @@ import controller.Warm;
 import controller.Cool;
 import controller.Cold;
 import controller.Freezing;
+import controller.HeapSort;
 
 public class ClothingDriver {
 
@@ -37,8 +38,23 @@ public class ClothingDriver {
 	public static void main(String[] args) {
 
 		Scanner in = new Scanner(System.in);	
-		
+		int heapArray[] = {45,32,60,90,75};
+        int length = heapArray.length;
+
+		HeapSort ob = new HeapSort();
+        ob.sort(heapArray);
+        
 		System.out.println("Hello, I am here to help you decide what to wear based on the current weather outside.");
+		
+		System.out.println("The following are the most common temperatures from each of my clothing categories:");
+       
+        for (int i = 0; i < length; ++i) {
+            System.out.print(heapArray[i] + " ");
+        }
+        
+        
+        //add stack and print which number belongs with which category
+        
 		System.out.println("\nWould you like me to tell you what to wear? Enter Yes/No");
 		
 		String userAnswer = in.nextLine();

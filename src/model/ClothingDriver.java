@@ -65,11 +65,12 @@ public class ClothingDriver {
 			Freezing freezing = new Freezing(userTemp);
 		}
 		
-		System.out.println("\nWould you like me to tell you what to wear? Enter Yes/No");
-		 userAnswer = in.nextLine();
 
 		}
 		
+		System.out.println("\nWould you like me to tell you what to wear? Enter Yes/No");
+		userAnswer = in.nextLine();
+		 
 		System.out.println("Goodbye!");
 		in.close();
 		

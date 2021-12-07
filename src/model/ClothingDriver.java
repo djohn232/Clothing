@@ -24,13 +24,15 @@
 
 package model;
 
-import java.util.Scanner;
+import java.util.Scanner; 
 import controller.Scorching;
 import controller.Warm;
 import controller.Cool;
 import controller.Cold;
 import controller.Freezing;
 import controller.HeapSort;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class ClothingDriver {
 
@@ -46,14 +48,21 @@ public class ClothingDriver {
         
 		System.out.println("Hello, I am here to help you decide what to wear based on the current weather outside.");
 		
-		System.out.println("The following are the most common temperatures from each of my clothing categories:");
+		System.out.println("\nThe following are the most common temperatures from each of my clothing categories:");
        
         for (int i = 0; i < length; ++i) {
             System.out.print(heapArray[i] + " ");
         }
         
+        Queue<String> clothingQ = new LinkedList<>();
         
-        //add stack and print which number belongs with which category
+        clothingQ.add("Scorching");
+        clothingQ.add("Warm");
+        clothingQ.add("Cool");
+        clothingQ.add("Cold");
+        clothingQ.add("Freezing");
+
+        System.out.println("\nThe following clothing categories will be used: " + clothingQ);
         
 		System.out.println("\nWould you like me to tell you what to wear? Enter Yes/No");
 		
@@ -61,26 +70,25 @@ public class ClothingDriver {
 
 		while (userAnswer.equals("yes") || userAnswer.equals("Yes")) {
 		
-		System.out.println("Please enter the temperature outside (in Fahrenheit, rounded to the closest whole number:");
+			System.out.println("Please enter the temperature outside (in Fahrenheit, rounded to the closest whole number:");
 		
-		int userTemp = in.nextInt();
+			int userTemp = in.nextInt();
 		
-		if (userTemp >= 90) {
-			Scorching scorching = new Scorching(userTemp);
-		}
-		else if (userTemp >= 70 || userTemp <= 89) {
-			Warm warm = new Warm(userTemp);
-		}
-		else if (userTemp >= 50 || userTemp <= 69) {
-			Cool cool = new Cool(userTemp);
-		}
-		else if (userTemp >= 33 || userTemp <= 49) {
-			Cold cold = new Cold(userTemp);
-		}
-		else if (userTemp  <= 32) {
-			Freezing freezing = new Freezing(userTemp);
-		}
-		
+			if (userTemp >= 90) {
+				Scorching scorching = new Scorching(userTemp);
+			}
+			else if (userTemp >= 70 || userTemp <= 89) {
+				Warm warm = new Warm(userTemp);
+			}
+			else if (userTemp >= 50 || userTemp <= 69) {
+				Cool cool = new Cool(userTemp);
+			}
+			else if (userTemp >= 33 || userTemp <= 49) {
+				Cold cold = new Cold(userTemp);
+			}
+			else if (userTemp  <= 32) {
+				Freezing freezing = new Freezing(userTemp);
+			}
 
 		}
 		

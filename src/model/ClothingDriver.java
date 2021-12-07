@@ -36,7 +36,7 @@ import java.util.Queue;
 
 public class ClothingDriver {
 
-	@SuppressWarnings("null")
+	@SuppressWarnings({ "null", "unused" })
 	public static void main(String[] args) {
 
 		Scanner in = new Scanner(System.in);	
@@ -63,15 +63,13 @@ public class ClothingDriver {
         clothingQ.add("Freezing");
 
         System.out.println("\nThe following clothing categories will be used: " + clothingQ);
-        
+      		
 		System.out.println("\nWould you like me to tell you what to wear? Enter Yes/No");
-		
 		String userAnswer = in.nextLine();
+		
+		if (userAnswer.equals("yes") || userAnswer.equals("Yes")) {
 
-		while (userAnswer.equals("yes") || userAnswer.equals("Yes")) {
-		
 			System.out.println("Please enter the temperature outside (in Fahrenheit, rounded to the closest whole number:");
-		
 			int userTemp = in.nextInt();
 		
 			if (userTemp >= 90) {
@@ -88,15 +86,12 @@ public class ClothingDriver {
 			}
 			else if (userTemp  <= 32) {
 				Freezing freezing = new Freezing(userTemp);
+			} else { 
+				System.out.println("Please try again!");
 			}
-
-		}
-		
-		System.out.println("\nWould you like me to tell you what to wear? Enter Yes/No");
-		userAnswer = in.nextLine();
-		 
-		System.out.println("Goodbye!");
-		in.close();
-		
+		} 
+		else if (userAnswer.equals("no") || userAnswer.equals("No")) {
+			System.out.println("Goodbye!");
+		}		
 	}
 }
